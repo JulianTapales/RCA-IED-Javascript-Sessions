@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>session 1</title>
+	<style type="text/css">
+		h1 {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hello world</h1>
+</body>
+
+<script type="text/javascript">
+	let positionToRgb = (x, y) => {
+		let colorScale = (value, maxValue) => {
+			return (value/maxValue)*255
+		}
+		
+		return 'rgb('+colorScale(x, window.innerWidth)+','+100+','+colorScale(y, window.innerHeight)+')'
+	}
+
+	window.onmousemove = (event) => {		
+		window.document.body.style = 'background-color: '+positionToRgb(event.clientX, event.clientY)+';'
+	}
+	
+
+	//console.log(indow.document)
+</script>
+
+</html>
